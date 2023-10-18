@@ -1,0 +1,18 @@
+package com.example.flutter_project_base
+
+import androidx.annotation.NonNull;
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugins.GeneratedPluginRegistrant
+import io.flutter.embedding.android.FlutterFragmentActivity;
+
+class MainActivity : FlutterFragmentActivity() {
+    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+        GeneratedPluginRegistrant.registerWith(flutterEngine);
+
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "flavor").setMethodCallHandler { call, result ->
+            result.success(BuildConfig.FLAVOR)
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "error": {
+        "field_is_required": "This field is required!",
+        "server_error": "Server error!"
+    },
+    "login": {
+        "title": "Login",
+        "remember_me": "Remember me",
+        "forgot_password": "Forgot password?"
+    }
+}
